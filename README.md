@@ -8,6 +8,8 @@ MvcSpider是我个人整合的一个框架，包含一个IOC容器、一个Entit
 使用
 ==
 ---
+
+
 IocContainer
 ---
 
@@ -55,6 +57,8 @@ IocContainer
     }
     
 ---
+
+
 EntityFrameworkFExtend
 ---
     命名空间：MvcSpider.EntityFrameworkFExtend
@@ -63,7 +67,6 @@ EntityFrameworkFExtend
   
 Mapping类：
 
-···C#
 
     class TEST_MODEL_MAPPING : EntityTypeConfiguration<TEST_MODEL>
     {
@@ -72,8 +75,7 @@ Mapping类：
             base.Init();
         }
     }
-      
-···
+
 
 使用(在DbContext中)：
 
@@ -83,8 +85,9 @@ Mapping类：
             base.OnModelCreating(modelBuilder);
         }
 
-
 ---
+
+
 ExpressionExtend
 ---
     命名空间：MvcSpider.ExpressionExtend
@@ -98,3 +101,49 @@ ExpressionExtend
             var data = ctx.Set<T>().Where(ps).ToList();
             return data;
         }
+        
+Controll层接收参数：
+
+        public ContentResult Query(List<QueryParam> queryParams)
+        {
+            return Content(ToTableJson(BllContanier.Get<ITestBll>().Query(queryParams)));
+        }
+
+Js封装参数传递
+
+    $.extend({
+        BuildQueryParams: function (e) {
+            var queryParams = new Array();
+            $(e).find('input').each(function () {
+                var obj = $.VerifyData(this);
+                if (obj !== null) {
+                    queryParams.push(obj);
+                }
+            });
+            $(e).find('select').each(function () {
+                var obj = $.VerifyData(this);
+                if (obj !== null) {
+                    queryParams.push(obj);
+                }
+            });
+            return { "QueryParams": queryParams };
+        },
+
+        VerifyData: function (e) {
+            var obj = {
+                name: $(e).attr('name'),
+                value: $(e).val(),
+                group: $(e).attr('group'),
+                mappingType: $(e).attr('mappingType'),
+                nullable: $(e).attr('nullable')
+            };
+            if (obj.name && obj.name !== null && obj.name !== '') {
+                if (obj.value) {
+                    if (obj.value !== null && obj.value !== '') {
+                        return obj;
+                    }
+                }
+            }
+            return null;
+        }
+    })
