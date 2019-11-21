@@ -1,0 +1,1 @@
+MvcSpider是我个人整合的一个框架，包含一个IOC容器、一个EntityFramework自注册模型的扩展以及一个LinqExpression的扩展。
