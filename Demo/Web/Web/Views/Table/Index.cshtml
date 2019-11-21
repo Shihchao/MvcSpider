@@ -1,0 +1,205 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/CommStyle.css" />
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Test</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Table</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="QueryArea" style="margin-top:5%">
+            <div class="row">
+                <div class="col-md-2">
+                    <input type="text" class="form-control" placeholder="Name" name="Name" group="0" mappingType="8" />
+                </div>
+                <div class="col-md-1">
+                    <select class="form-control" name="Sex" group="1" mappingType="2">
+                        <option value="1">M</option>
+                        <option value="0">F</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-5">
+                        <input type="number" class="form-control" placeholder="Age" name="Age" group="2" mappingType="5" />
+                    </div>
+                    <div class="col-md-1">—</div>
+                    <div class="col-md-5">
+                        <input type="number" class="col-md-2 form-control" placeholder="Age" name="Age" group="3" mappingType="7" />
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top:15px">
+                <div class="col-md-2">
+                    <input type="text" class="form-control" placeholder="Language" name="Language" group="4" mappingType="8" />
+                </div>
+                <div class="col-md-5">
+                    <div class="col-md-5">
+                        <input type="date" class="form-control" placeholder="Birthday" name="Birthday" group="5" mappingType="5" />
+                    </div>
+                    <div class="col-md-1">—</div>
+                    <div class="col-md-5">
+                        <input type="date" class="form-control" placeholder="Birthday" name="Birthday" group="6" mappingType="7" />
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <button type="button" id="QueryBtn" data-loading-text="Loading..." class="btn btn-primary">Search</button>
+                </div>
+                <div class="col-md-1">
+                    <button type="button" id="AddBtn" data-loading-text="Loading..." class="btn btn-success">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive" style="margin-top:5%">
+            <table id="table"></table>
+        </div>
+    </div><!-- /.container -->
+
+    <div id="AddModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Add Model</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="Add_Form" method="post" action="@Url.Action("Add")" enctype="multipart/form-data" novalidate="novalidate" class="content-defmargin">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="Name" placeholder="Name" />
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="Age" placeholder="Age" />
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="Sex">
+                                <option value="1">M</option>
+                                <option value="0">F</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" class="form-control" name="Birthday" placeholder="Birthday" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="Language" placeholder="Language" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="SaveBtn" type="button" class="btn btn-success">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.form.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/QueryParamsBuilder.js"></script>
+    <script>
+        var opt = {
+            ajax:{
+                url: '@Url.Action("Query")',
+                type:"POST",
+                data: $.BuildQueryParams('#QueryArea')
+            },
+            columns: [
+                        {
+                            title: "PK_ID", data: "PK_ID",visible:false
+                        },
+                        {
+                            title: "Name", data: "Name", width: '200px'
+                        },
+                        {
+                            title: "Age", data: "Age", width: '100px'
+                        },
+                        {
+                            title: "Sex", data: "Sex", width: '100px', render: function (data, type, row, meta) {
+                                return data == 1 ? "M" : "F";
+                            }
+                        },
+                        {
+                            title: "Birthday", data: "Birthday", width: '200px', render: function (data, type, row, meta) {
+                                return data.replace('T', ' ');
+                            }
+                        },
+                        {
+                            title: "Language", data: "Language", width: '150px'
+                        },
+                        {
+                            title: "Options", data: null, width: '100px', render: function (data, type, row, meta) {
+                                return  '<button type="button" class="btn btn-danger" onclick="del(\''+row.PK_ID+'\')">Del</button>'
+                            }
+                        },
+            ],
+            processing: true,
+            searching: false,
+            destroy: true
+
+        }
+        $('#table').dataTable(opt);
+
+        $('#QueryBtn').on('click', function () {
+            opt.ajax.data = $.BuildQueryParams('#QueryArea');
+            $('#table').empty().dataTable(opt);
+        });
+        $('#AddBtn').on('click', function () {
+            $('#AddModal').modal();
+            $('#table').empty().dataTable(opt);
+        });
+        $('#SaveBtn').on('click', function () {
+            var form = $('#Add_Form');
+            var options = {
+                url: form.attr('action'),
+                success: function (datas, status, xhr, $form) {
+                    $('#AddModal').modal('hide');
+                    $('#table').empty().dataTable(opt);
+                },
+                error: function (xhr, status, error, $form) {
+
+                },
+                complete: function (xhr, status, $form) {
+
+                }
+            };
+            $(form).ajaxSubmit(options);
+
+        });
+
+        function del(pkid) {
+              $.ajax({
+                url: '@Url.Action("Del")',
+                type: "POST",
+                  data: { pkid: pkid },
+                success: function (data) {
+                    $('#table').empty().dataTable(opt);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                 },
+            });
+        }
+    </script>
+</body>
+
+
+

@@ -1,0 +1,15 @@
+F:\Personal\MVCSpider\Demo\DAL\bin\Debug\DAL.dll
+F:\Personal\MVCSpider\Demo\DAL\bin\Debug\DAL.pdb
+F:\Personal\MVCSpider\Demo\DAL\bin\Debug\EntityFramework.dll
+F:\Personal\MVCSpider\Demo\DAL\bin\Debug\EntityFramework.SqlServer.dll
+F:\Personal\MVCSpider\Demo\DAL\bin\Debug\Model.dll
+F:\Personal\MVCSpider\Demo\DAL\bin\Debug\MvcSpider.dll
+F:\Personal\MVCSpider\Demo\DAL\bin\Debug\MvcSpider.pdb
+F:\Personal\MVCSpider\Demo\DAL\bin\Debug\Model.pdb
+F:\Personal\MVCSpider\Demo\DAL\bin\Debug\EntityFramework.xml
+F:\Personal\MVCSpider\Demo\DAL\bin\Debug\EntityFramework.SqlServer.xml
+F:\Personal\MVCSpider\Demo\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+F:\Personal\MVCSpider\Demo\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+F:\Personal\MVCSpider\Demo\DAL\obj\Debug\DAL.csproj.CopyComplete
+F:\Personal\MVCSpider\Demo\DAL\obj\Debug\DAL.dll
+F:\Personal\MVCSpider\Demo\DAL\obj\Debug\DAL.pdb

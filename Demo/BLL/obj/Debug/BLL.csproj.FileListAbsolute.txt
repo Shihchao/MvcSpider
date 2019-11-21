@@ -1,0 +1,15 @@
+F:\Personal\MVCSpider\Demo\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+F:\Personal\MVCSpider\Demo\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+F:\Personal\MVCSpider\Demo\BLL\bin\Debug\BLL.dll
+F:\Personal\MVCSpider\Demo\BLL\bin\Debug\BLL.pdb
+F:\Personal\MVCSpider\Demo\BLL\bin\Debug\DAL.dll
+F:\Personal\MVCSpider\Demo\BLL\bin\Debug\Model.dll
+F:\Personal\MVCSpider\Demo\BLL\bin\Debug\MvcSpider.dll
+F:\Personal\MVCSpider\Demo\BLL\bin\Debug\EntityFramework.dll
+F:\Personal\MVCSpider\Demo\BLL\bin\Debug\MvcSpider.pdb
+F:\Personal\MVCSpider\Demo\BLL\bin\Debug\DAL.pdb
+F:\Personal\MVCSpider\Demo\BLL\bin\Debug\Model.pdb
+F:\Personal\MVCSpider\Demo\BLL\bin\Debug\EntityFramework.xml
+F:\Personal\MVCSpider\Demo\BLL\obj\Debug\BLL.csproj.CopyComplete
+F:\Personal\MVCSpider\Demo\BLL\obj\Debug\BLL.dll
+F:\Personal\MVCSpider\Demo\BLL\obj\Debug\BLL.pdb

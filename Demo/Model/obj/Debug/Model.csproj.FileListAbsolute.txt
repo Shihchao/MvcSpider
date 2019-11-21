@@ -1,0 +1,11 @@
+F:\Personal\MVCSpider\Demo\Model\bin\Debug\Model.dll
+F:\Personal\MVCSpider\Demo\Model\bin\Debug\Model.pdb
+F:\Personal\MVCSpider\Demo\Model\bin\Debug\EntityFramework.dll
+F:\Personal\MVCSpider\Demo\Model\bin\Debug\EntityFramework.SqlServer.dll
+F:\Personal\MVCSpider\Demo\Model\bin\Debug\EntityFramework.xml
+F:\Personal\MVCSpider\Demo\Model\bin\Debug\EntityFramework.SqlServer.xml
+F:\Personal\MVCSpider\Demo\Model\obj\Debug\Model.csprojAssemblyReference.cache
+F:\Personal\MVCSpider\Demo\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+F:\Personal\MVCSpider\Demo\Model\obj\Debug\Model.csproj.CopyComplete
+F:\Personal\MVCSpider\Demo\Model\obj\Debug\Model.dll
+F:\Personal\MVCSpider\Demo\Model\obj\Debug\Model.pdb

@@ -1,0 +1,11 @@
+F:\Personal\MVCSpider\MvcSpider\MvcSpider\bin\Debug\MvcSpider.dll
+F:\Personal\MVCSpider\MvcSpider\MvcSpider\bin\Debug\MvcSpider.pdb
+F:\Personal\MVCSpider\MvcSpider\MvcSpider\bin\Debug\EntityFramework.dll
+F:\Personal\MVCSpider\MvcSpider\MvcSpider\bin\Debug\EntityFramework.SqlServer.dll
+F:\Personal\MVCSpider\MvcSpider\MvcSpider\bin\Debug\EntityFramework.xml
+F:\Personal\MVCSpider\MvcSpider\MvcSpider\bin\Debug\EntityFramework.SqlServer.xml
+F:\Personal\MVCSpider\MvcSpider\MvcSpider\obj\Debug\MvcSpider.csprojAssemblyReference.cache
+F:\Personal\MVCSpider\MvcSpider\MvcSpider\obj\Debug\MvcSpider.csproj.CoreCompileInputs.cache
+F:\Personal\MVCSpider\MvcSpider\MvcSpider\obj\Debug\MvcSpider.csproj.CopyComplete
+F:\Personal\MVCSpider\MvcSpider\MvcSpider\obj\Debug\MvcSpider.dll
+F:\Personal\MVCSpider\MvcSpider\MvcSpider\obj\Debug\MvcSpider.pdb

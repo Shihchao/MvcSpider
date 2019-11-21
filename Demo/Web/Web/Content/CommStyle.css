@@ -1,0 +1,140 @@
+﻿body {
+}
+
+/* div样式 */
+.div-border {
+    border: solid 1px #a3a3a3;
+    border-radius: 5px;
+}
+
+.div-border-bottom {
+    border-bottom: solid 1px gray;
+}
+
+.div-bg-gray {
+    background-color: #bebcbc;
+}
+
+
+/* div内部内容样式 */
+.content-defmargin {
+}
+
+    .content-defmargin div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+.content-defmargin-left {
+}
+
+    .content-defmargin-left div {
+        margin-left: 15px;
+    }
+
+    .content-defmargin-left button {
+        margin-left: 15px
+    }
+
+.content-text {
+}
+
+    .content-text span {
+        color: gray;
+    }
+
+
+/* 列表单元格内部内容样式 */
+.cell-recomb {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+    .cell-recomb div {
+        margin-bottom: 5px;
+    }
+
+
+/* 具体设计样式 */
+
+.div-imgAdd {
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+    .div-imgAdd div {
+        width: 100%;
+        height: 100%;
+        background: url(img/add.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin-bottom: 0;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        border: 5px dashed #808080;
+    }
+
+.addimgdiv {
+    width: 100%;
+    height: 100%;
+    background: url(img/add.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 5px dashed #808080;
+}
+
+.preveiwSize {
+    width: 80%;
+    height: 500px;
+}
+
+/*悬浮圆框div*/
+.suspendCircle {
+    z-index: 9999;
+    position: fixed !important;
+    border-radius: 20px 20px;
+    border: 1px solid #030d61;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+
+/* 功能性样式 */
+.text-smallgray {
+    font-size: small;
+    color: gray;
+}
+
+.maxsize {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.floatLeft {
+    display: inline-block;
+    float: left;
+}
+
+.floatRight {
+    display: inline-block;
+    float: right;
+}
+
+.hightLight {
+    border: 1px solid #ff0000;
+}
+
+.fileHide {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: relative;
+}
